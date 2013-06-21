@@ -5,18 +5,16 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , user = require('./routes/user')
   , http = require('http')
   , path = require('path')
   , sass = require('node-sass')
-  , connect = require('connect')
   , partials = require('express-partials');
 
 var app = express();
 
 app.configure(function() {
 	// all environments
-	app.set('port', process.env.PORT || 3000);
+	app.set('port', process.env.PORT || 8080);
 	app.set('views', __dirname + '/views');
 
 	// set EJS as default template engine
@@ -36,8 +34,8 @@ app.configure(function() {
 	app.use(app.router);
 
 	app.use(sass.middleware({
-	      src: __dirname  + '/public/css/sass'
-	    , dest: __dirname + '/public/css'
+	      src: __dirname  + '/public'
+	    , dest: __dirname + '/public'
 	    , debug: true
   	}));
 
@@ -51,7 +49,6 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/users', user.list);
 
 
 http.createServer(app).listen(app.get('port'), function(){

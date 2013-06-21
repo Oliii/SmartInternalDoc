@@ -1,7 +1,13 @@
+// Reset CSS
 @import url(http://reset5.googlecode.com/hg/reset.min.css);
+
+// Import 'open sans' font
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=latin,latin-ext);
-/*** Global variables definition ***/
+
+@import "variables";
+
 body {
-  background-color: #f5f5f5;
-  font-family: 'Open Sans', sans-serif;
-  color: #2f2933; }
+	background-color: $colorWhitesmoke;
+	font-family: $fontFamily;
+	color: $colorShadedTrees;
+}

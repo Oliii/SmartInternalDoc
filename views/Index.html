@@ -1,11 +1,33 @@
+<!DOCTYPE html>
+<html  id="ng-app" ng-app="SmartInternalDoc">
+<head>
+    <title>Manage technical documentation</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/menu.css" />
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" ></script>
+
+</head>
+<body>
+
+<nav>
+	<ul>
+		<li><a href="#/ManageDoc">Manage Doc</a></li>
+		<li><a href="#/ComponentsLibrary">Components Library</a></li>
+		<li><a href="#/Graphics">Graphics</a></li>
+		<li><a href="#/Administration">Administration</a></li>
+	</ul>	
+</nav>
 
 
-<body id="ng-app" ng-app>
-toto
-<div ng-controller>
-    Hello la doc
+<div ng-controller="mainController">
+    
+	<div ng-view></div>
+
 </div>
 
-dsgzrsjkj pok
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" ></script>
+
+<script type="text/javascript" src="/scripts/main.js"></script>
+<script type="text/javascript" src="/scripts/ManageDoc.js"></script>
 </body>
+</html>
