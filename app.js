@@ -8,7 +8,20 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , sass = require('node-sass')
-  , partials = require('express-partials');
+  , partials = require('express-partials')
+  , mongoose = require('mongoose');
+
+  mongoose.connect('mongodb://localhost/ManageDocDb');
+
+  var db = mongoose.connection;
+
+ db.on('error', function() {
+ 	console.log('error connecting to database');
+ });
+
+ db.once('open', function callback () {
+  console.log('yay !!');
+});
 
 var app = express();
 
@@ -49,6 +62,37 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+
+var kittySchema = mongoose.Schema({
+    name: String
+})
+
+kittySchema.methods.speak = function () {
+  var greeting = this.name
+    ? "Meow name is " + this.name
+    : "I don't have a name"
+  console.log(greeting);
+}
+
+var Kitten = mongoose.model('Kitten', kittySchema);
+
+var fluffy = new Kitten({ name: 'fluffy' });
+//fluffy.speak() // "Meow name is fluffy"
+
+fluffy.save(function (err, fluffy) {
+  if (err) {
+  	console.log('error')
+  }
+  fluffy.speak();
+});
+
+Kitten.find(function (err, kittens) {
+  if (err) {
+  	console.log('error')
+  }
+  console.log(kittens)
+})
+
 
 
 http.createServer(app).listen(app.get('port'), function(){
