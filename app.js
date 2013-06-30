@@ -20,9 +20,10 @@ var express = require('express')
  });
 
  db.once('open', function callback () {
-  console.log('yay !!');
+  console.log('mongo database connection established');
 });
 
+// Create an express application
 var app = express();
 
 app.configure(function() {
@@ -40,8 +41,11 @@ app.configure(function() {
 
   // deal with favicon browsers request
   app.use(express.favicon());
+
   // log all requests
   app.use(express.logger('dev'));
+
+  // Parse the request body to json automatically
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
@@ -61,7 +65,16 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+
+// Routing
+
+var Component = require('./models/Component').Component;
+
 app.get('/', routes.index);
+
+app.get('/api/component', Component.getAll);
+app.get('/api/component/:id', Component.findById);
+app.post('api/component', Component.save);
 
 
 http.createServer(app).listen(app.get('port'), function(){

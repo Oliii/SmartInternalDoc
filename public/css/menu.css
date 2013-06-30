@@ -1,19 +1,15 @@
 /*** Global variables definition ***/
-nav {
-  width: 100%;
-  color: #cac8c9;
-  color: #3b7577; }
-  nav ul {
+nav#primaryNav {
+  width: 100%; }
+  nav#primaryNav ul {
     text-align: center;
     border-bottom: 1px solid #cac8c9;
     position: relative; }
-    nav ul li {
+    nav#primaryNav ul li {
       display: inline-block; }
-      nav ul li:hover {
-        background-color: #FCFCFC; }
-        nav ul li:hover a {
-          color: #2f2933; }
-      nav ul li a {
+      nav#primaryNav ul li:hover a {
+        color: #2f2933; }
+      nav#primaryNav ul li a {
         display: inline-block;
         line-height: 40px;
         padding: 0 10px;
@@ -21,3 +17,11 @@ nav {
         text-decoration: none;
         text-shadow: 0 1px 0 white;
         transition: all 150ms cubic-bezier(0.77, 0, 0.175, 1) 0s; }
+
+nav.secondaryNav {
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(to right, #2f2933, #3c3441);
+  box-shadow: 3px 0 3px #cac8c9;
+  color: white;
+  padding: 10px; }

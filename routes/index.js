@@ -8,12 +8,7 @@
 exports.index = function(req, res){
 
 
-	TopicModel.find(function (err, topics) {
-	  if (err) {
-	  	console.log('no topics');
-	  }
-	  console.log(topics);
-	})
+	
 
 	//var testTopic = new TopicModel({title: 'Premier Topic', summary: 'Ceci est un test d\'ajout de topic' });
 

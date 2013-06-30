@@ -2,15 +2,19 @@
 <html  id="ng-app" ng-app="SmartInternalDoc">
 <head>
     <title>Manage technical documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/css/menu.css" />
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" ></script>
+    
 
 </head>
-<body>
+<body ng-controller="mainController">
 
-<nav>
+<nav id="primaryNav">
 	<ul>
 		<li><a href="#/ManageDoc">Manage Doc</a></li>
 		<li><a href="#/ComponentsLibrary">Components Library</a></li>
@@ -19,15 +23,41 @@
 	</ul>	
 </nav>
 
+<div class="row-fluid">
+	<div class="span2">
+		<nav class="secondaryNav">
+			<h2>Last added topics</h2>
+			<ul>
+				<li>Topic 1</li>
+				<li>Topic 2</li>
+			</ul>
 
-<div ng-controller="mainController">
-    
-	<div ng-view></div>
+			<h2>Elements</h2>
+			<ul>
+				<li>Navigations</li>
+				<li>Typographie</li>
+				<li>Couleurs</li>
+				<li>Organisation des pages</li>
+				<li>Tableaux</li>
+				<li>Boutons</li>
+				<li>Messages d'erreurs et d'informations</li>
+			</ul>
+		</nav>
+
+	</div>
+	<div class="span10">
+		<div ng-view></div>
+	</div>
 
 </div>
 
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" ></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+
 <script type="text/javascript" src="/scripts/main.js"></script>
 <script type="text/javascript" src="/scripts/ManageDoc.js"></script>
+<script type="text/javascript" src="/scripts/ComponentsLibrary.js"></script>
 </body>
 </html>

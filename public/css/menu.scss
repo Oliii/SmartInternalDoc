@@ -1,9 +1,9 @@
 @import "variables";
 
-nav {
+nav#primaryNav {
+	//margin-top: 25px;
 	width: 100%;
-	color: $colorDarkGrey;
-	color: $colorBlueNight;
+	//background: linear-gradient(to top, $colorShadedTrees, lighten($colorShadedTrees, 10%)) ;
 
 	ul {
 		text-align: center;
@@ -14,7 +14,7 @@ nav {
 			display: inline-block;
 			
 			&:hover {
-				background-color: #FCFCFC;
+				//background-color: #FCFCFC;
 
 				a {
 					color: $colorShadedTrees;
@@ -26,6 +26,7 @@ nav {
 				line-height: 40px;
 				padding: 0 10px;
 				color: #999999;
+				//color: white;
 		    	text-decoration: none;
 		    	text-shadow: 0 1px 0 white;
 		    	transition: all 150ms cubic-bezier(0.77, 0, 0.175, 1) 0s;
@@ -35,4 +36,15 @@ nav {
 			
 		}
 	}
+}
+
+
+nav.secondaryNav {
+	position: absolute;
+	height: 100%;
+	background: linear-gradient(to right, $colorShadedTrees, lighten($colorShadedTrees, 5%));
+	box-shadow: 3px 0 3px $colorDarkGrey;
+
+	color: white;
+	padding: 10px;
 }
