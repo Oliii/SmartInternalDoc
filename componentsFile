@@ -1,0 +1,106 @@
+AngularJS library:
+
+	- Directives :
+		- slider
+		- input with delete
+		- multiple select
+		- label
+		- datetime picker
+		- nicescroll
+		- tooltip
+	- Filters :
+		- startFrom
+		- between
+		- exactMatch
+	- Services :
+
+
+Jquery Library:
+	- helpbox
+	- tooltip
+	- group buttons
+
+[
+	{
+		title: "Slider",
+		summary: "Create a slider graphic component. Encapsulate the jquery-ui slider plugin.",
+		techno: "angular",
+		type: "directive",
+		thumbnail: ""
+	},
+	{
+
+		title: "Input with delete",
+		summary: "Add a cross image at the end of an input to delete its content.",
+		techno: "angular",
+		type: "directive",
+		thumbnail: ""
+	},
+	{
+	
+		title: "Multiple selection",
+		summary: "Allow to easily browse and select several items from a list.",
+		techno: "angular",
+		type: "directive",
+		thumbnail: ""
+	},
+	{
+	
+		title: "Label",
+		summary: "Create a button with the look of a label.",
+		techno: "angular",
+		type: "directive",
+		thumbnail: ""
+	},
+	{
+	
+		title: "Datetime picker",
+		summary: "Add a calendar on an input. Encapsulate the datetime picker jquery-ui plugin.",
+		techno: "angular",
+		type: "directive",
+		thumbnail: ""
+	},
+	{
+	
+		title: "Nicescroll",
+		summary: "Add a custom scrollbar on a container. Encapsulate the nicescroll jquery plugin.",
+		techno: "angular",
+		type: "directive",
+		thumbnail: ""
+	},
+	{
+	
+		title: "Tooltip",
+		summary: "Add a tooltip on an element. Encapsulate the custom jquery tooltip.",
+		techno: "angular",
+		type: "directive",
+		thumbnail: ""
+	}
+	,
+	{
+	
+		title: "Start From",
+		summary: "Keep the first n items of an array and return a new array.",
+		techno: "angular",
+		type: "filter",
+		thumbnail: ""
+	}
+	,
+	{
+	
+		title: "Between",
+		summary: "Keep only the items of an array between a start and an end index.",
+		techno: "angular",
+		type: "filter",
+		thumbnail: ""
+	},
+	{
+	
+		title: "Exact Match",
+		summary: "Select a subset of items from an array which properties match a pattern object.",
+		techno: "angular",
+		type: "filter",
+		thumbnail: ""
+	}
+
+]

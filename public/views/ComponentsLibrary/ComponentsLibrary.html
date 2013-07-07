@@ -1,0 +1,85 @@
+
+<h1>Components Library</h1>
+
+<a href="#newComponentModal" role="button" data-toggle="modal">Create a new component</a>
+
+<div id="newComponentModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="myModalLabel">Component creation</h3>
+	</div>
+		<div class="modal-body">
+
+			<form class="form-horizontal" id="newComponentForm">
+				<div class="control-group">
+					<label class="control-label" for="componentTitle">Title</label>
+					<div class="controls">
+						<input type="text" id="componentTitle" ng-model="newComponent.title" />
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="componentSummary">Summary</label>
+					<div class="controls">
+					 	140 characters max.
+						<textarea type="password" id="componentSummary" ng-model="newComponent.summary" maxlength="140"></textarea>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="componentTechno">Techno</label>
+					<div class="controls">
+						<select id="componentTechno" ng-model="newComponent.techno">
+							<option value="angularjs" selected="selected" >AngularJS</option>
+							<option value="jquery" >JQuery</option>
+							<option value="asp.net" >ASP.NET</option>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="componentType">Type</label>
+					<div class="controls">
+						<select id="componentType" ng-model="newComponent.type">
+							<option value="" selected="selected" >None</option>
+							<option value="directive" >Directive</option>
+							<option value="filter" >Filter</option>
+							<option value="service" >Service</option>
+							<option value="plugin" >Plugin</option>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="componentType">Type</label>
+					<div class="controls">
+						<input type="file" name="files" />
+					</div>
+				</div>
+			</form>
+		</div>
+	<div class="modal-footer">
+		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+		<button type="button" class="btn btn-primary" ng-click="createComponent()">Create</button>
+	</div>
+</div>
+
+<div class="btn-group" data-toggle="buttons-radio">
+	<button type="button" class="btn active">AngularJS</button>
+	<button type="button" class="btn">Jquery</button>
+	<button type="button" class="btn">ASP.NET</button>
+</div>
+
+<div ng-repeat="c in components" >
+	<ul>
+		<li>
+			title : {{ c.title }}
+		</li>
+		<li>
+			summary: {{ c.summary }}
+		</li>
+		<li>
+			techno : {{ c.techno }}
+		</li>
+		<li>
+			type : {{ c.type }}
+		</li>	
+	</ul>
+</div>
+

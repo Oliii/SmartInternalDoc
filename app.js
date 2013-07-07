@@ -28,7 +28,7 @@ var app = express();
 
 app.configure(function() {
   // all environments
-  app.set('port', process.env.PORT || 8080);
+  app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
 
   // set EJS as default template engine
@@ -67,14 +67,15 @@ if ('development' == app.get('env')) {
 
 
 // Routing
-
-var Component = require('./models/Component').Component;
-
 app.get('/', routes.index);
 
-app.get('/api/component', Component.getAll);
-app.get('/api/component/:id', Component.findById);
-app.post('api/component', Component.save);
+var components = require('./models/Components');
+
+app.get('/api/components', components.findAll);
+app.get('/api/components/:id', components.findById);
+app.put('/api/components', components.save);
+app.post('/api/components', components.save);
+app.delete('/api/components/:id', components.delete);
 
 
 http.createServer(app).listen(app.get('port'), function(){

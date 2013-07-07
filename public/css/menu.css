@@ -4,7 +4,8 @@ nav#primaryNav {
   nav#primaryNav ul {
     text-align: center;
     border-bottom: 1px solid #cac8c9;
-    position: relative; }
+    position: relative;
+    margin: 0; }
     nav#primaryNav ul li {
       display: inline-block; }
       nav#primaryNav ul li:hover a {

@@ -1,10 +1,10 @@
-var Application = angular.module('SmartInternalDoc', []);
+var Application = angular.module('SmartInternalDoc', ['ngResource']);
 
 Application.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
   	  when('/', {templateUrl: 'views/ManageDoc.html',   controller: ManageDocCtrl}).
       when('/ManageDoc', {templateUrl: 'views/ManageDoc.html',   controller: 'ManageDocCtrl'}).
-      when('/ComponentsLibrary', {templateUrl: 'views/ComponentsLibrary.html',   controller: 'ComponentsLibraryCtrl'}).
+      when('/ComponentsLibrary', {templateUrl: 'views/ComponentsLibrary/ComponentsLibrary.html',   controller: 'ComponentsLibraryCtrl'}).
       when('/Graphics', {templateUrl: 'views/Graphics.html',   controller: 'GraphicsCtrl'}).
       when('/Administration', {templateUrl: 'views/Administration.html',   controller: 'AdministrationCtrl'}).
       otherwise({redirectTo: '/'});
@@ -21,6 +21,3 @@ function GraphicsCtrl($scope) {
 
 }
 
-function AdministrationCtrl($scope) {
-	
-}
